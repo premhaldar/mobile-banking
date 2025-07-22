@@ -13,8 +13,9 @@ document.getElementById('btn-login').addEventListener('click', function (event) 
         phoneInput.value = '';
         pinInput.value = '';
     } else {
-        window.location.href='home.html'
         alert('Successfully Logged In!');
+        window.location.href='home.html';
+        
     }
 });
 

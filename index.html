@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Modern Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+    <!-- Browser Frame -->
+    <div class="browser-frame w-full max-w-5xl">
+        <!-- Main Content -->
+        <div class="gradient-bg min-h-[600px] rounded-b-xl relative flex items-center justify-center">
+            <!-- Decorative Leaves -->
+            <div class="leaf-decoration leaf-1" style="--rotation: -15deg;"></div>
+            <div class="leaf-decoration leaf-2" style="--rotation: 25deg;"></div>
+            <div class="leaf-decoration leaf-3" style="--rotation: 45deg;"></div>
+            <div class="leaf-decoration leaf-4" style="--rotation: -30deg;"></div>
+            <div class="leaf-decoration leaf-5" style="--rotation: 60deg;"></div>
+            
+            <!-- Sign In Card -->
+            <div class="glass-card w-full max-w-md mx-4 p-8 rounded-2xl shadow-2xl sign-in">
+                <h2 class="text-3xl font-bold text-green-400 text-center mb-8">Chandra Bank PLC</h2>
+                <h2 class="text-xl font-bold text-red-800 text-center mb-8">Welcome to login page!</h2>
+                
+                <!-- Sign In Form -->
+                <form id="login-form" class="space-y-3">
+                    <!-- Phone Number Field -->
+                    <div>
+                        <input id="phone-number" 
+                            type="text" 
+                            placeholder="Enter Your Phone Number"
+                            class="input-field w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-gray-50"
+                        >
+                    </div>
+                    
+                    <!-- Password Field -->
+                    <div>
+                        <input id="pin-number"
+                            type="password" 
+                            placeholder="Pin?"
+                            class="input-field w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-gray-50"
+                        >
+                    </div>
+                    
+                    <!-- Sign In Button -->
+                    <button id="btn-login" 
+                        type="submit"
+                        class="btn-signin w-full py-3 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                    >
+                        Log in
+                    </button>
+                </form>
+                
+                <!-- Divider -->
+                <div class="flex items-center my-6">
+                    <div class="flex-1 border-t border-gray-200"></div>
+                    <span class="px-4 text-sm text-white-500">Or login with</span>
+                    <div class="flex-1 border-t border-gray-200"></div>
+                </div>
+                
+                <!-- Social Login -->
+                <div class="flex justify-center space-x-4">
+                    <button class="social-btn p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button class="social-btn p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                        <i class="fab fa-google"></i>
+                    </button>
+                </div>
+                
+                <!-- Sign Up Link -->
+                <div class="text-center mt-8">
+                    <a href="#" class="text-White-600 hover:text-purple-600 transition-colors duration-300">
+                        Sign Up
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>

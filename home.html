@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Banking - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+    <!-- Browser Frame -->
+    <div class="browser-frame w-full max-w-5xl">
+      <!-- Browser Controls -->
+
+      <!-- Main Content -->
+      <div class="gradient-bg min-h-[700px] rounded-b-xl relative">
+        <!-- Decorative Leaves -->
+        <div class="leaf-decoration leaf-1" style="--rotation: -15deg"></div>
+        <div class="leaf-decoration leaf-2" style="--rotation: 25deg"></div>
+        <div class="leaf-decoration leaf-3" style="--rotation: 45deg"></div>
+        <div class="leaf-decoration leaf-4" style="--rotation: -30deg"></div>
+        <div class="leaf-decoration leaf-5" style="--rotation: 60deg"></div>
+
+        <!-- Dashboard Content -->
+        <div class="relative z-10 p-6 md:p-8">
+          <!-- Header -->
+          <div class="text-center mb-8">
+            <h1
+              class="text-3xl md:text-4xl font-bold text-green-400 mb-2 drop-shadow-lg"
+            >
+              Welcome To Chandra Bank PLC
+            </h1>
+            <!-- divider -->
+            <div class="flex items-center my-6">
+                    <div class="flex-1 border-t border-gray-200"></div>
+                    <div class="flex-1 border-t border-gray-200"></div>
+                </div>
+                <!-- divider end -->
+            <h1
+              class="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg"
+            >
+              <i class="fas fa-wallet mr-3"></i>
+              My Wallet
+            </h1>
+            <p class="text-white/80">Welcome back, Prem!</p>
+          </div>
+
+          <!-- Balance Card -->
+          <div
+            class="balance-card max-w-lg mx-auto p-8 rounded-2xl shadow-2xl mb-8 pulse-animation"
+          >
+            <div class="text-center">
+              <p class="text-white/80 text-lg mb-2">Current Balance</p>
+              <h2
+                class="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg"
+              >
+                ৳<span id="balance">25450</span>
+              </h2>
+              <p class="text-white/70">
+                <i class="fas fa-eye mr-2"></i>
+                Account: ****1234
+              </p>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="max-w-4xl mx-auto mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Add Money Button -->
+              <button
+                class="action-btn p-6 rounded-2xl text-center group"
+                id="addMoneyBtn"
+              >
+                <div
+                  class="text-4xl text-green-400 mb-4 group-hover:scale-110 transition-transform"
+                >
+                  <i class="fas fa-plus-circle"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Add Money</h3>
+                <p class="text-white/70">Add funds to your wallet</p>
+              </button>
+
+              <!-- Cash Out Button -->
+              <button
+                class="action-btn p-6 rounded-2xl text-center group"
+                id="cashOutBtn"
+              >
+                <div
+                  class="text-4xl text-red-400 mb-4 group-hover:scale-110 transition-transform"
+                >
+                  <i class="fas fa-minus-circle"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Cash Out</h3>
+                <p class="text-white/70">Withdraw money from wallet</p>
+              </button>
+
+              <!-- Transaction History Button -->
+              <button
+                class="action-btn p-6 rounded-2xl text-center group"
+                id="historyBtn"
+              >
+                <div
+                  class="text-4xl text-blue-400 mb-4 group-hover:scale-110 transition-transform"
+                >
+                  <i class="fas fa-history"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  Transaction History
+                </h3>
+                <p class="text-white/70">View all your transactions</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Stats -->
+           
+           <!-- --------- -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals (Hidden by default) -->
+    <!-- Add Money Modal -->
+    <div
+      id="addMoneyModal"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50"
+    >
+      <div class="glass-card max-w-md w-full mx-4 p-6 rounded-2xl">
+        <h3 class="text-2xl font-bold text-white mb-4 text-center">
+          Add Money
+        </h3>
+        <div class="space-y-4">
+          <input id="input-add-money"
+            type="text"
+            placeholder="Enter Amount (৳)"
+            class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+          />
+          <input id="input-pin"
+            type="password"
+            placeholder="Enter Pin"
+            class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+          />
+          <div class="flex space-x-4">
+            <button id="btn-add-money"
+              class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition-colors"
+            >
+              Add Money
+            </button>
+            <button
+              class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-lg font-semibold transition-colors"
+              onclick="closeModal('addMoneyModal')"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cash Out Modal -->
+    <div
+      id="cashOutModal"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50"
+    >
+      <div class="glass-card max-w-md w-full mx-4 p-6 rounded-2xl">
+        <h3 class="text-2xl font-bold text-white mb-4 text-center">Cash Out</h3>
+        <div class="space-y-4">
+          <input
+            type="number"
+            placeholder="Enter Amount (৳)"
+            class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+          />
+          <input
+            type="text"
+            placeholder="Agent Number"
+            class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+          />
+          <div class="flex space-x-4">
+            <button
+              class="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-semibold transition-colors"
+            >
+              Cash Out
+            </button>
+            <button
+              class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-lg font-semibold transition-colors"
+              onclick="closeModal('cashOutModal')"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transaction History Modal -->
+    <div
+      id="historyModal"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50"
+    >
+      <div
+        class="glass-card max-w-2xl w-full mx-4 p-6 rounded-2xl max-h-[80vh] overflow-y-auto"
+      >
+        <h3 class="text-2xl font-bold text-white mb-6 text-center">
+          Transaction History
+        </h3>
+        <div class="space-y-4">
+          <div
+            class="transaction-item p-4 rounded-lg flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-plus text-white"></i>
+              </div>
+              <div>
+                <p class="text-white font-semibold">Add Money</p>
+                <p class="text-white/70 text-sm">Jan 22, 2025 - 2:30 PM</p>
+              </div>
+            </div>
+            <p class="text-green-400 font-bold">+৳5,000</p>
+          </div>
+
+          <div
+            class="transaction-item p-4 rounded-lg flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-shopping-cart text-white"></i>
+              </div>
+              <div>
+                <p class="text-white font-semibold">Online Shopping</p>
+                <p class="text-white/70 text-sm">Jan 21, 2025 - 4:15 PM</p>
+              </div>
+            </div>
+            <p class="text-red-400 font-bold">-৳1,200</p>
+          </div>
+
+          <div
+            class="transaction-item p-4 rounded-lg flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-mobile-alt text-white"></i>
+              </div>
+              <div>
+                <p class="text-white font-semibold">Mobile Recharge</p>
+                <p class="text-white/70 text-sm">Jan 20, 2025 - 10:45 AM</p>
+              </div>
+            </div>
+            <p class="text-red-400 font-bold">-৳500</p>
+          </div>
+
+          <div
+            class="transaction-item p-4 rounded-lg flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-minus text-white"></i>
+              </div>
+              <div>
+                <p class="text-white font-semibold">Cash Out</p>
+                <p class="text-white/70 text-sm">Jan 19, 2025 - 6:20 PM</p>
+              </div>
+            </div>
+            <p class="text-red-400 font-bold">-৳3,000</p>
+          </div>
+        </div>
+
+        <button
+          class="w-full mt-6 bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-lg font-semibold transition-colors"
+          onclick="closeModal('historyModal')"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <script src="js/addMoney.js"></script>
+  </body>
+</html>

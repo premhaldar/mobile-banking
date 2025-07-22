@@ -1,0 +1,178 @@
+.gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .leaf-decoration {
+        position: absolute;
+        opacity: 0.6;
+        filter: blur(1px);
+      }
+
+      .leaf-1 {
+        top: 10%;
+        left: 5%;
+        transform: rotate(-15deg);
+        width: 150px;
+        height: 300px;
+        background: linear-gradient(45deg, #4ade80, #22c55e);
+        border-radius: 0 100% 0 100%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .leaf-2 {
+        top: 20%;
+        left: 15%;
+        transform: rotate(25deg);
+        width: 120px;
+        height: 250px;
+        background: linear-gradient(45deg, #34d399, #10b981);
+        border-radius: 100% 0 100% 0;
+        animation: float 4s ease-in-out infinite reverse;
+      }
+
+      .leaf-3 {
+        top: 5%;
+        right: 10%;
+        transform: rotate(45deg);
+        width: 180px;
+        height: 320px;
+        background: linear-gradient(45deg, #a855f7, #9333ea);
+        border-radius: 0 100% 0 100%;
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .leaf-4 {
+        top: 25%;
+        right: 5%;
+        transform: rotate(-30deg);
+        width: 140px;
+        height: 280px;
+        background: linear-gradient(45deg, #c084fc, #a855f7);
+        border-radius: 100% 0 100% 0;
+        animation: float 7s ease-in-out infinite reverse;
+      }
+
+      .leaf-5 {
+        bottom: 10%;
+        right: 8%;
+        transform: rotate(60deg);
+        width: 160px;
+        height: 290px;
+        background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+        border-radius: 0 100% 0 100%;
+        animation: float 4.5s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(var(--rotation, 0deg));
+        }
+        50% {
+          transform: translateY(-20px) rotate(var(--rotation, 0deg));
+        }
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      }
+
+      .balance-card {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.1)
+        );
+        backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .action-btn {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .action-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
+
+      .browser-frame {
+        background: linear-gradient(180deg, #f1f1f1 0%, #e1e1e1 100%);
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .browser-controls {
+        background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 100%);
+      }
+
+      .address-bar {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #d1d5db;
+      }
+
+      .pulse-animation {
+        animation: pulse-glow 2s infinite;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+        }
+      }
+
+      .transaction-item {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .transaction-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(10px);
+      }
+      /* my css */
+      .btn{
+        background-color: #59a111;
+        font-weight: bold;
+        font-size: 20px ;
+      }
+      .btn:hover{
+        background-color: #34d399;
+        transition: .5s;
+      }
+      .label{
+        font-weight: bold;
+        font-size: 15px ;
+      }
+      .input{
+        font-weight: bold;
+        font-size: 20px;
+        padding-left: 20px;
+      }
+      .back{
+        background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .btn-signin {
+            background: linear-gradient(135deg, #55f793, #8b5cf6);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-signin:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+        }

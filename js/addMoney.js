@@ -2,7 +2,6 @@
 document.getElementById("btn-add-money").addEventListener("click", function () {
   const totalBalance = document.getElementById("balance").innerText;
   const balance = parseFloat(totalBalance.replace(/,/g, ""));
-  console.log(balance);
   const inputAddMoney = document.getElementById("input-add-money").value;
   const addMoney = parseFloat(inputAddMoney);
   const inputPin = document.getElementById("input-pin").value;

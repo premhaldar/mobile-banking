@@ -3,6 +3,10 @@ document.getElementById("btn-cash-out").addEventListener("click", function () {
   const balance = parseFloat(totalBalance.replace(/,/g, ""));
   const inputCashOut = document.getElementById("input-cash-out").value;
   const CashOut = parseFloat(inputCashOut);
+  if(CashOut>balance){
+    alert('cash out balance is bigger than your account balance!')
+    return;
+  }
   const inputPin = document.getElementById("input-pin-number").value;
   if (inputPin === "1234") {
     const totalSubtractionBalance = balance - CashOut;

@@ -1,5 +1,5 @@
 document.getElementById('btn-login').addEventListener('click', function (event) {
-    event.preventDefault(); // ফর্ম রিলোড আটকায়
+    event.preventDefault();
 
     const phoneInput = document.getElementById('phone-number');
     const pinInput = document.getElementById('pin-number');
